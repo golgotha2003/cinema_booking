@@ -28,7 +28,7 @@ const LoginForm: React.FC = () => {
       // Redirect or perform additional actions after login
     } catch (err: unknown) {
       if (axios.isAxiosError(err) && err.response) {
-        console.error('Lỗi đăng nhập:', err.response.data?.message || err.message);
+        console.error('Lỗi đăng nhập:', err.response.data?.message || err.message || 'Unknown error');
         setError(err.response.data?.message || 'Đăng nhập thất bại');
       } else {
         console.error('Lỗi đăng nhập:', (err as Error).message);
